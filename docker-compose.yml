@@ -1,0 +1,21 @@
+rabbitmqPublisher:
+  image: "rabbitmq:3-management"
+  hostname: "rabbitmqPublisher"
+  ports:
+    - "15672:15672"
+    - "5672:5672"
+    - "1883:1883"
+  labels:
+    NAME: "rabbitmqPublisher"
+  restart: always
+
+rabbitmqConsumer:
+  image: "rabbitmq:3-management"
+  hostname: "rabbitmqConsumer"
+  ports:
+    - "15673:15672"
+    - "5673:5672"
+    - "1884:1883"
+  labels:
+    NAME: "rabbitmqConsumer"
+  restart: always
